@@ -28,6 +28,12 @@ execute:
   warning: false
 ---
 
+::: notes
+Hi,..
+
+This study is part of Jula's PhD and we worked on the time series analysis together during her visit at UT Austin last year.
+
+:::
 
 ## The temporal nature of emotions and misinformation
 
@@ -51,13 +57,15 @@ $\rightarrow$ The relationship seems **bi-directional**, hence, it may be import
 
 ::: {.notes}
 
-The relationship between misinformation and emotions, especially on social media, is characterized by fueling each other. 
+When misinformation circulates on social media, emotions often spread alongside it and the two have been thought to mutually reinforce each other. 
 
-Indeed, instances of heightened emotional experiences are linked to misinformation acceptance and conspiracy beliefs. 
+And indeed, experimental work show that heightened emotional experiences are linked to misinformation acceptance and longitudinal panel surveys link emotional traits to conspiracy beliefs over time.
 
-And in turn, misinformation is followed by emotional experiences when it contracts or confirms beliefs. 
+But studies also show that misinformation itself is followed by emotional experiences when it contracts or confirms pre-existing beliefs.
 
-This suggest a bidirectional relationship and shows that is may be important to examine the temporal nature of the relationship between misinformation and emotions. 
+This suggests a bidirectional relationship at the individual level and highlights that understanding it requires attention to the temporal dynamics, both the order of effects and the persistence over time. 
+
+[CLICK: NEXT SLIDE]
 
 :::
 
@@ -65,20 +73,37 @@ This suggest a bidirectional relationship and shows that is may be important to 
 
 ## Understanding misinformation spread as operating at multiple levels
 
-
 - At the **collective level**, misinformation represents only a fraction of news [see @budakMisunderstandingHarmsOnline2024 for a discussion]
 
-- Individual-level dynamics can ripple through the broader system generating macro-level consequences, including affective polarization [@jenkeAffectivePolarizationMisinformation2024] and loss of trust in institutions [@ognyanovaMisinformationActionFake2020]
+    - But individual-level dynamics can ripple through the broader system **generating macro-level consequences**, including affective polarization [@jenkeAffectivePolarizationMisinformation2024] and loss of trust in institutions [@ognyanovaMisinformationActionFake2020]
 
 - Misinformation is linked to emotional dynamics and hate speech on social media [@luhringQuantifyingMisinfo2025; @moslehMisinformationHarmfulLanguage2024; @prollochsEmotionsOnlineRumor2021; @zolloEmotionalDynamicsAge2015]
 
-$\rightarrow$ Aggregate patterns may mask or contradict individual-level mechanisms (*ecological fallacy*<sup>3</sup>)
+$\rightarrow$ Aggregate patterns may **mask** or **contradict** individual-level mechanisms (*ecological fallacy*<sup>3</sup>)
 
 ::: footer
 
 <sup>3</sup>*Ecological fallacy* = patterns observed at the aggregate<br> do not reflect (or may contradict) an individual
 
 :::
+
+::: notes
+
+This relationship between misinformation and emotions operates across multiple levels of analysis, which has consequences for how we study it.
+
+At the collective level, misinformation represents only a small fraction of overall news consumption on platforms. 
+
+Yet individual-level dynamics can aggregate and ripple through the broader system, generating macro-level consequences such as affective polarization and erosion of trust in institutions.
+
+And prior work looking at aggregate social media data has found associations between misinformation and hateful emotional dynamics.
+
+The methodological implication is that aggregate patterns may mask, or in some cases contradict, the individual-level mechanisms that produce them, which is called the ecological fallacy: a relationship observed at the population level need not hold or reverse for any individual within it. 
+
+Studying emotions and misinformation therefore requires examining both levels simultaneously, rather than treating findings from one as evidence about the other.
+
+[NEXT SLIDE]
+
+::: 
 
 ---
 
@@ -107,30 +132,48 @@ $\rightarrow$ Aggregate patterns may mask or contradict individual-level mechani
 :::
 :::
 
-::: {.notes}
+::: notes
 
+This multi-level perspective is increasingly recognized in the misinformation literature. 
 
+Frischlich and colleagues, for instance, have recently argued that the complexity of misinformation extends across individual, group, and societal levels, and that single-level approaches cannot adequately capture its dynamics.
+
+We adopt this perspective and look at the processes depending on the where we look.
+
+At the collective level, we look at synchronized spikes in misinformation and emotional expression around major events.
+
+At the individual level, we look at what kind of emotional profile of a user predicts engagement with untrustworthy content. 
+
+[NEXT SLIDE]
 :::
 
 ---
 
 ## Research questions {.center}
 
-::: {.fragment}
 **RQ1 [Collective]:** Do misinformation and emotional expression **reinforce each other** at the aggregate level, or do they respond independently to external events?
-:::
 
-::: {.fragment}
 **RQ2 [Individual]:** Do static emotional **traits**, **dynamics** (baseline, variability, instability, inertia), or momentary **states** predict whether a user engages with untrustworthy news?
-:::
 
-::: {.notes}
+::: notes
+To formalize these two questions:
 
+The first research question asks whether misinformation sharing and emotional expression reinforce each other in the aggregate time series, or whether they respond independently to external events.
+
+The second asks whether sharing of untrustworthy content is predicted by stable emotional traits, fluctuating emotions, or by momentary states in the time window immediately preceding sharing. 
+
+These are the two questions the rest of the analysis is organized around.
+
+[NEXT SLIDE]
 
 :::
 
 # Data and methods {.center}
 
+::: notes
+A few notes on the data and methods.
+
+:::
 ---
 
 ## Data
@@ -141,13 +184,25 @@ $\rightarrow$ Aggregate patterns may mask or contradict individual-level mechani
 - Collected via academic API v2 just before the X transition
 
 
+
+![Screenshot from u/babelfishery in r/DataHoarder](figures/twitter_api.png){fig-align="left" width=50%}
+
 ::: footer
 <sup>4</sup>Documentation (February 16th, 2026):<br> [https://www.brandwatch.com/blog/faq-how-does-brandwatch-classify-location/](https://web.archive.org/web/20250216151058/https://www.brandwatch.com/blog/faq-how-does-brandwatch-classify-location/)
 
 :::
 
-::: {.notes}
+::: notes
 
+We analyze approximately 29,000 Twitter users geolocated in Austria, identified using Brandwatch's location classification algorithm, which combines profile metadata, time zones, geographic coordinates, and top-level domains.
+
+The observation period runs from January 2019 to March 2023 spanning pre-pandemic, pandemic, and post-pandemic phases as well as several major global and domestic political events that we use to characterize collective dynamics.
+
+After filtering for spam accounts, media outlets, and inactive profiles, the final dataset comprises around 138 million unique tweets and retweets.
+
+The data was collected via the academic Twitter API in April and May of 2023, shortly before the free API access was closed.  
+
+[NEXT]
 :::
 
 ---
@@ -163,14 +218,29 @@ $\rightarrow$ Aggregate patterns may mask or contradict individual-level mechani
 | Partisan news | NewsGuard left/right label |
 | **Anger / fear** | `pol_emo_emDeBERTa` [@widmannCreatingComparingDictionary2022] — German tweets only |
 
+![Figure 1. Area Under the Curve for the emotion expressions (1,000 tweets).](figures/roc_curve.png){fig-align="left" width="50%"}
 
 ::: footer
 *Note*: URL-based misinformation misses text-only false claims and audiovisuals<br> and emotional expression ≠ experience.  
 :::
 
-::: {.notes}
+::: notes
 
+Four key variables, all operationalized at the tweet level.
 
+News sharing is identified by matching expanded URLs against the NewsGuard database, which rates roughly 11,000 news domains on a 0–100 trustworthiness scale. 
+
+Untrustworthy news is operationalized as content from sources scoring below 60, the threshold NewsGuard itself uses to flag domains as failing basic journalistic criteria.
+
+Partisan news is identified through NewsGuard's left and right bias labels.
+
+Emotional expression in tweets is classified using pol_emo_emDeBERTa, a transformer model fine-tuned by Widmann and Wich on German-language political text. 
+
+We focus on anger and fear because both are high-arousal, negative-valence emotions, and because both feature prominently in the experimental and survey literature linking emotions to misinformation acceptance. 
+
+The ROC curves shown here indicate that classifier performance for both emotions compares well against our manual annotations.
+
+[NEXT]
 :::
 
 ---
@@ -198,25 +268,41 @@ $\rightarrow$ Aggregate patterns may mask or contradict individual-level mechani
 :::
 :::
 
-::: {.notes}
+::: notes
+At the collective level, we work with daily proportions over 1,551 days. 
 
+ARIMA models identify structural breaks, which we control for as dummies in a vector autoregression with nine lags. 
+
+Misinformation, anger, and fear are endogenous; overall news sharing and the structural breaks are exogenous. Impulse-response and variance decomposition then quantify cross-variable dynamics.
+
+At the individual level, we extract three emotional features per user following Houben and colleagues to go beyond just a baseline and look into how emotions fluctuate: variability, instability, and inertia. 
+
+Because users post irregularly, we estimate these within weekly windows and use exponential decay regression for the inertia parameter. 
+
+The features then enter logistic regressions predicting whether a user ever shared any news, partisan news, or untrustworthy news.
 
 :::
 
 # Results at the collective level {.center}
 
+::: notes
+
+We start with the results at the collective level.
+
+:::
+
 ---
 
 ## Tweet activity tracks major events
 
-![Figure 1. Daily tweet volume and trustworthiness of shared news (here per week for cleaner visualization).](figures/desc_plot.png){fig-align="center" width=80%}
+![Figure 2. Daily tweet volume and trustworthiness of shared news (here per week for cleaner visualization).](figures/desc_plot.png){fig-align="center" width=80%}
 
-::: {.notes}
+::: notes
 Our data shows several spikes related to domestic or global crises, for example, COVID lockdowns or political scandals in Austria. 
 
-In addition, we see in the bottom plot that untrustworthy news (in purple), in absolute terms, is rare. 
+In addition, we see in the bottom plot that untrustworthy news (in purple), in absolute terms, is rare (hovering around 0.1-0.3% of all tweets).
 
-Interestingly, we see structural breaks in summer 2022, which we control for as dummies.
+Interestingly, we see some structural breaks in summer 2022, which we control for as dummies.
 :::
 
 ---
@@ -225,19 +311,18 @@ Interestingly, we see structural breaks in summer 2022, which we control for as 
 
 ::: {.columns}
 ::: {.column width="55%"}
-![Figure 2. Impulse-response functions based on 10% shock.](figures/irf_plot.png){width=100%}
+![Figure 3. Impulse-response functions based on 10% shock.](figures/irf_plot.png){width=100%}
 :::
 
 ::: {.column width="45%"}
-- Strong **within-variable** persistence (each variable predicts itself)
 - **Cross-variable effects all < 5%** at every forecast horizon
 - Fear → anger is the only non-trivial cross-effect (~37% at 14 days)
 - But misinformation ↔ emotions shows essentially **zero** cross-variable effects
 :::
 :::
 
-::: {.notes}
-At the aggregate daily level, after controlling for total news activity and structural breaks, neither of the emotions moves misinformation, or vice versa.
+::: notes
+At the aggregate daily level, after controlling for total news activity and structural breaks, neither of the emotions move misinformation, or vice versa.
 
 They all respond to the same external events.
 
@@ -268,7 +353,7 @@ They all respond to the same external events.
 
 <br>
 
-![Figure 3. Odds ratios for emotional features predicting news sharing (1,000 bootstraps).](figures/individual_plot.png){fig-align="center" width=750%}
+![Figure 4. Odds ratios for emotional features predicting news sharing (1,000 bootstraps).](figures/individual_plot.png){fig-align="center" width=750%}
 
 :::
 
@@ -277,14 +362,16 @@ They all respond to the same external events.
 - But moment-to-moment emotions do **not** predict sharing
 
 
-::: {.notes}
-It's not just *how much* anger users express, it's *how volatile*
-that expression is. Stable, persistent anger (high inertia) is actually protective.
-Volatile, spike-y anger is the risk profile.
+::: notes
+At the individual level, anger baseline, variability and instability all predict untrustworthy news sharing, which is similar for fear but weaker. 
+
+Inertia, so how sticky the emotion is reduces it, and emotional states directly before posting do not predict sharing.
+
+So it's not just how much anger users express, it's how volatile that expression is. 
 
 People who flare up (rather than stewing) share misinformation. 
 
-This is consistent with the conspiracy-belief literature on emotional reactivity.
+[NEXT SLIDE]
 :::
 
 ---
@@ -292,15 +379,11 @@ This is consistent with the conspiracy-belief literature on emotional reactivity
 
 ## But moment-to-moment emotions do **not** predict sharing {visibility="hidden"}
 
-![Figure 4. Emotions 1h and 24h before/after sharing.](figures/windows_emotions_coefs.png){fig-align="center" width=80%}
+![Emotions 1h and 24h before/after sharing.](figures/windows_emotions_coefs.png){fig-align="center" width=80%}
 
 ::: {.fragment .fade-in}
 - Neither anger nor fear in the **1–24h before** sharing predicts an untrustworthy share
 - No detectable change in emotional expression **after** sharing either
-:::
-
-::: {.notes}
-
 :::
 
 ---
@@ -332,13 +415,13 @@ This is consistent with the conspiracy-belief literature on emotional reactivity
 
 ::: {.fragment .fade-out fragment-index=1}
 
-![Figure 4. Cumulative distribution function of users sharing trustworthy and untrustworthy news. Dashed horizontal line marks 80% cut-off.](figures/cdf_plot.png){fig-align="center" width="60%"}
+![Figure 5. Cumulative distribution function of users sharing trustworthy and untrustworthy news. Dashed horizontal line marks 80% cut-off.](figures/cdf_plot.png){fig-align="center" width="60%"}
 
 :::
 
 ::: {.fragment fragment-index=1}
 
-![Figure 5. Density distributions of anger dynamics for users sharing trustworthy (10,663 tweets) vs. untrustworthy (146 tweets) news sources. Dashed vertical lines = group means.](figures/distributions_plot.png){fig-align="center" width="60%"}
+![Figure 6. Density distributions of anger dynamics for users sharing trustworthy (10,663 tweets) vs. untrustworthy (146 tweets) news sources. Dashed vertical lines = group means.](figures/distributions_plot.png){fig-align="center" width="60%"}
 
 :::
 
@@ -348,12 +431,23 @@ This is consistent with the conspiracy-belief literature on emotional reactivity
 
 :::
 
-::: {.notes}
-Only ~14% of users ever touch an untrustworthy source, so even strong individual effects get diluted in the daily average.
+::: notes
+However, in our whole dataset, only ~14% of users ever share an untrustworthy source, and only 0.5% of users account for 80% of the untrustworthy news shared. 
+
+[CLICK FOR FIGURE TO APPEAR]
+
+These users tend to be higher in their baseline anger and they are also more volatile in their expression. 
+
+[NEXT SLIDE]
 :::
 
 
-# What it means {.center}
+# Conclusion {.center}
+
+::: notes
+What this means
+
+:::
 
 ---
 
@@ -381,25 +475,29 @@ $\rightarrow$ *Misinformation is shared through **selection** of vulnerable user
 <br>
 <br>
 **Emotional traits predict *who* shares. External events predict *when* it spreads.**
-:::
 
-::: {.notes}
-
-:::
-
----
-
-## Implications for interventions
-
-::: {.incremental}
 - **Platform-level:** rapid response and pre-bunking during predictable crises (the *when*)
 - **User-level:** target users with high-anger, high-volatility profiles (the *who*)
-- Nudging campaigns alone are unlikely to mitigate misinformation
 :::
 
-::: {.notes}
-Intervention implications are speculative / "directions the findings point to" rather than
-recommendations.
+::: notes
+Putting both levels of analysis together, a consistent picture emerges.
+
+At the aggregate level, both emotions and misinformation respond to external events, but they do not amplify or reinforce each other.
+The collective spread of misinformation is best understood as driven by these exposure events: when major events occur, more users encounter untrustworthy sources, and a subset of them share.
+
+At the individual level, the picture is different. 
+Stable emotional traits and in particular volatile, high-arousal anger predict which users are the ones that engage.
+
+So misinformation spreads not through a general contagion at the population level, but primarily through selection at the individual level.
+
+[CLICK]
+
+So taken together, emotional traits predict who shares misinformation, and external events predict when it spreads.
+
+This translates into interventions focusing on both rapid response and pre-bunking during predictable crises and targeting users with high-risk profiles. 
+
+[NEXT]
 :::
 
 ---
@@ -411,13 +509,12 @@ recommendations.
 - URL-based misinformation misses text/meme/screenshot false claims
 - Austrian Twitter does not generalize to other platforms/contexts
 
-::: {.notes}
+::: notes
+Limitations of this study relate to the measurement of emotions and URL-based misinformation. 
 
+Beyond that, Austrian Twitter of course does not generalize to other platforms and contexts. 
 
-
-If pressed on the URL limitation: note that text-only misinformation is probably
-*more* emotionally charged, so we may be underestimating the effect.
-
+[If pressed on the URL limitation: note that text-only misinformation is probably *more* emotionally charged, so we may be underestimating the effect.]
 :::
 
 ---
@@ -429,10 +526,6 @@ If pressed on the URL limitation: note that text-only misinformation is probably
 3. **Cross-platform / cross-country** replication
 4. Does sharing misinformation *satisfy* a psychological need, or *reinforce* it?
 
-::: {.notes}
-
-:::
-
 ---
 
 ## Thank you! {.center}
@@ -441,18 +534,25 @@ For questions, email jula.luehring@gesis.org :-)
 
 Pre-registration: [osf.io/xejdw](https://osf.io/xejdw)
 
-Code & data: [osf.io/mvc6b](https://osf.io/mvc6b)
 
 ::: {.notes}
 For questions, reach out to Jula. 
+
+
+[possibly add this if I manage to do it before ICA:
+
+Code & data: [osf.io/mvc6b](https://osf.io/mvc6b)
+
+]
 
 :::
 
 # Backup slides {.center}
 
-::: {.notes}
+::: notes
 
 The slides below are for likely Q&A topics.
+
 You can navigate to them with the slide number menu or press `m` in reveal.js!
 
 :::
@@ -460,7 +560,6 @@ You can navigate to them with the slide number menu or press `m` in reveal.js!
 ---
 
 ## Backup: structural breaks in untrustworthy news
-
 
 Two unexplained step-changes (July 1 and Aug 28, 2022) in the untrustworthy proportion.
 Cumulative shift: +0.11 percentage points. Modelled as dummies in the VAR.
