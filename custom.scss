@@ -1,0 +1,47 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: 'Source Code Pro', sans-serif;
+$presentation-font-size-root: 24px;
+
+$link-color: #8A2BE2;
+$presentation-heading-color: #003C78;
+
+$presentation-h1-font-size: 2.6em;
+$presentation-h2-font-size: 1.6em;
+$presentation-h3-font-size: 1em;
+
+
+/*-- scss:rules --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;900&display=swap');
+
+// Heading colors and weights
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-weight: 900;
+}
+
+.reveal h2 {
+  color: #1E8CC8;
+}
+
+// Title slide tweaks
+#title-slide, .reveal .title-slide {
+  margin-top: -100px;
+}
+
+.reveal .title-slide h1.title,
+.reveal .title-slide .title {
+  font-weight: 900;
+  font-size: 1.6em;
+}
+
+.reveal .title-slide .subtitle {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+// Hide footer on section-divider slides
+.reveal section.present[data-background-color] ~ .footer,
+.reveal section.present.center .footer {
+  display: none !important;
+}
