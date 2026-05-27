@@ -1,140 +1,140 @@
 [
   {
-    "objectID": "emomis_slides.html#the-temporal-nature-of-emotions-and-misinformation",
-    "href": "emomis_slides.html#the-temporal-nature-of-emotions-and-misinformation",
+    "objectID": "index.html#the-temporal-nature-of-emotions-and-misinformation",
+    "href": "index.html#the-temporal-nature-of-emotions-and-misinformation",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "The temporal nature of emotions and misinformation",
     "text": "The temporal nature of emotions and misinformation\n\nEmotions1 and misinformation2 are widely assumed to fuel each other\n\nInstances of heightened emotions are linked to misinformation acceptance (in experiments: Martel et al., 2020; Greenstein & Franklin, 2020) and conspiracy belief (longitudinal surveys: Albath et al., 2024)\nIn turn, misinformation is followed by emotional experiences when it contradicts or confirms beliefs (Ecker et al., 2022; Lühring et al., 2023)\n\n\n\\(\\rightarrow\\) The relationship exists at the individual level\n\\(\\rightarrow\\) The relationship seems bi-directional, hence, it may be important to examine the temporal dynamics\n\n1Based on circumplex model (Russell, 1980) and constructivist view (Lindquist & Barrett, 2012)\n2False information without intention to deceive (Wardle & Derakhshan, 2017)\n\n\nThe relationship between misinformation and emotions, especially on social media, is characterized by fueling each other.\nIndeed, instances of heightened emotional experiences are linked to misinformation acceptance and conspiracy beliefs.\nAnd in turn, misinformation is followed by emotional experiences when it contracts or confirms beliefs.\nThis suggest a bidirectional relationship and shows that is may be important to examine the temporal nature of the relationship between misinformation and emotions."
   },
   {
-    "objectID": "emomis_slides.html#understanding-misinformation-spread-as-operating-at-multiple-levels",
-    "href": "emomis_slides.html#understanding-misinformation-spread-as-operating-at-multiple-levels",
+    "objectID": "index.html#understanding-misinformation-spread-as-operating-at-multiple-levels",
+    "href": "index.html#understanding-misinformation-spread-as-operating-at-multiple-levels",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Understanding misinformation spread as operating at multiple levels",
     "text": "Understanding misinformation spread as operating at multiple levels\n\nAt the collective level, misinformation represents only a fraction of news (see Budak et al., 2024 for a discussion)\nIndividual-level dynamics can ripple through the broader system generating macro-level consequences, including affective polarization (Jenke, 2024) and loss of trust in institutions (Ognyanova et al., 2020)\nMisinformation is linked to emotional dynamics and hate speech on social media (Luehring et al., 2025; Mosleh et al., 2024; Pröllochs et al., 2021; Zollo et al., 2015)\n\n\\(\\rightarrow\\) Aggregate patterns may mask or contradict individual-level mechanisms (ecological fallacy3)\n\n3Ecological fallacy = patterns observed at the aggregate do not reflect (or may contradict) an individual"
   },
   {
-    "objectID": "emomis_slides.html#looking-at-different-levels-of-analysis",
-    "href": "emomis_slides.html#looking-at-different-levels-of-analysis",
+    "objectID": "index.html#looking-at-different-levels-of-analysis",
+    "href": "index.html#looking-at-different-levels-of-analysis",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Looking at different levels of analysis",
     "text": "Looking at different levels of analysis\n\n\n\n[Collective level] Synchronized spikes around events but is that mutual reinforcement or just a shared response to the same shock?\n\n[Individual level] Trait vs. state: does emotional baseline matter, or the moment right before sharing?\n\n\n\n\nFrischlich et al. (2025)"
   },
   {
-    "objectID": "emomis_slides.html#research-questions",
-    "href": "emomis_slides.html#research-questions",
+    "objectID": "index.html#research-questions",
+    "href": "index.html#research-questions",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Research questions",
     "text": "Research questions\n\nRQ1 [Collective]: Do misinformation and emotional expression reinforce each other at the aggregate level, or do they respond independently to external events?\n\n\nRQ2 [Individual]: Do static emotional traits, dynamics (baseline, variability, instability, inertia), or momentary states predict whether a user engages with untrustworthy news?"
   },
   {
-    "objectID": "emomis_slides.html#data",
-    "href": "emomis_slides.html#data",
+    "objectID": "index.html#data",
+    "href": "index.html#data",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Data",
     "text": "Data\n\n~29,000 Austrian Twitter users, located via Brandwatch4\nJan 2019 → Mar 2023 covers pre-pandemic, pandemic, and post-pandemic\n~138 million tweets after filtering (spam, media accounts, inactive users)\nCollected via academic API v2 just before the X transition\n\n\n4Documentation (February 16th, 2026): https://www.brandwatch.com/blog/faq-how-does-brandwatch-classify-location/"
   },
   {
-    "objectID": "emomis_slides.html#measurement",
-    "href": "emomis_slides.html#measurement",
+    "objectID": "index.html#measurement",
+    "href": "index.html#measurement",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Measurement",
     "text": "Measurement\n\n\n\n\n\n\n\n\nVariable\nHow we measure it\n\n\n\n\nNews sharing\nURL → NewsGuard domain match\n\n\nUntrustworthy news\nNewsGuard score &lt; 60\n\n\nPartisan news\nNewsGuard left/right label\n\n\nAnger / fear\npol_emo_emDeBERTa (Widmann & Wich, 2022) — German tweets only\n\n\n\n\nNote: URL-based misinformation misses text-only false claims and audiovisuals and emotional expression ≠ experience."
   },
   {
-    "objectID": "emomis_slides.html#two-levels-two-analytic-strategies",
-    "href": "emomis_slides.html#two-levels-two-analytic-strategies",
+    "objectID": "index.html#two-levels-two-analytic-strategies",
+    "href": "index.html#two-levels-two-analytic-strategies",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Two levels, two analytic strategies",
     "text": "Two levels, two analytic strategies\n\n\nCollective (RQ1)\n\nDaily proportions (1,551 days)\nARIMA + structural-break detection\nVAR(9) with misinformation, anger, fear as endogenous\nNews sharing & two structural breaks as exogenous controls\nImpulse-response + variance decomposition\n\n\nIndividual (RQ2)\n\nPer-user emotional features (Houben et al., 2015):\n\nbaseline, variability, instability, inertia\n\nAdjusted for irregular posting (weekly windows ≥ 10 tweets; hourly decay for inertia)\nLogistic regressions predicting any / partisan / untrustworthy news sharing"
   },
   {
-    "objectID": "emomis_slides.html#tweet-activity-tracks-major-events",
-    "href": "emomis_slides.html#tweet-activity-tracks-major-events",
+    "objectID": "index.html#tweet-activity-tracks-major-events",
+    "href": "index.html#tweet-activity-tracks-major-events",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Tweet activity tracks major events",
     "text": "Tweet activity tracks major events\n\n\n\nFigure 1. Daily tweet volume and trustworthiness of shared news (here per week for cleaner visualization).\n\n\n\nOur data shows several spikes related to domestic or global crises, for example, COVID lockdowns or political scandals in Austria.\nIn addition, we see in the bottom plot that untrustworthy news (in purple), in absolute terms, is rare.\nInterestingly, we see structural breaks in summer 2022, which we control for as dummies."
   },
   {
-    "objectID": "emomis_slides.html#var9-emotions-and-misinformation-move-independently",
-    "href": "emomis_slides.html#var9-emotions-and-misinformation-move-independently",
+    "objectID": "index.html#var9-emotions-and-misinformation-move-independently",
+    "href": "index.html#var9-emotions-and-misinformation-move-independently",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "VAR(9): emotions and misinformation move independently",
     "text": "VAR(9): emotions and misinformation move independently\n\n\n\n\n\nFigure 2. Impulse-response functions based on 10% shock.\n\n\n\n\nStrong within-variable persistence (each variable predicts itself)\nCross-variable effects all &lt; 5% at every forecast horizon\nFear → anger is the only non-trivial cross-effect (~37% at 14 days)\nBut misinformation ↔︎ emotions shows essentially zero cross-variable effects\n\n\n\nAt the aggregate daily level, after controlling for total news activity and structural breaks, neither of the emotions moves misinformation, or vice versa.\nThey all respond to the same external events."
   },
   {
-    "objectID": "emomis_slides.html#anger-traits-predict-untrustworthy-sharing",
-    "href": "emomis_slides.html#anger-traits-predict-untrustworthy-sharing",
+    "objectID": "index.html#anger-traits-predict-untrustworthy-sharing",
+    "href": "index.html#anger-traits-predict-untrustworthy-sharing",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Anger traits predict untrustworthy sharing",
     "text": "Anger traits predict untrustworthy sharing\n\n\n\n\nAnger baseline, variability, instability all elevate sharing of untrustworthy news (OR &gt; 1.3)\nAnger inertia reduces it (OR &lt; 1) shows high persistence ≠ high engagement\nFear shows weaker, less consistent effects\n\n\n\n\n\n\nFigure 3. Odds ratios for emotional features predicting news sharing (1,000 bootstraps).\n\n\n\n\nBut moment-to-moment emotions do not predict sharing\n\n\nIt’s not just how much anger users express, it’s how volatile that expression is. Stable, persistent anger (high inertia) is actually protective. Volatile, spike-y anger is the risk profile.\nPeople who flare up (rather than stewing) share misinformation.\nThis is consistent with the conspiracy-belief literature on emotional reactivity."
   },
   {
-    "objectID": "emomis_slides.html#and-only-a-motivated-minority-engages-with-untrustworthy-news",
-    "href": "emomis_slides.html#and-only-a-motivated-minority-engages-with-untrustworthy-news",
+    "objectID": "index.html#and-only-a-motivated-minority-engages-with-untrustworthy-news",
+    "href": "index.html#and-only-a-motivated-minority-engages-with-untrustworthy-news",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "And only a motivated minority engages with untrustworthy news",
     "text": "And only a motivated minority engages with untrustworthy news\n\n\n\n\n\n\n\nSharing\nUsers\nShare\n\n\n\n\nAny news\n24,367\n83.5%\n\n\nPartisan news\n10,589\n36.3%\n\n\nUntrustworthy news\n4,104\n14.1%\n\n\n\n\n\n\n\n\n\n\nFigure 4. Cumulative distribution function of users sharing trustworthy and untrustworthy news. Dashed horizontal line marks 80% cut-off.\n\n\n\n\n\n\n\nFigure 5. Density distributions of anger dynamics for users sharing trustworthy (10,663 tweets) vs. untrustworthy (146 tweets) news sources. Dashed vertical lines = group means.\n\n\n\n\n\n\nOnly ~14% of users ever touch an untrustworthy source, so even strong individual effects get diluted in the daily average."
   },
   {
-    "objectID": "emomis_slides.html#selection-not-contagion",
-    "href": "emomis_slides.html#selection-not-contagion",
+    "objectID": "index.html#selection-not-contagion",
+    "href": "index.html#selection-not-contagion",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Selection, not contagion",
     "text": "Selection, not contagion\n\n\nAggregate level\nEvents drive both emotions and misinformation, but they don’t mutually reinforce each other.\n\\(\\rightarrow\\) Misinformation spreads through exposure opportunities.\n\nIndividual level\nStable emotional traits, and especially volatile anger, predict who engages.\n\\(\\rightarrow\\) Misinformation is shared through selection of vulnerable users.\n\n\n  Emotional traits predict who shares. External events predict when it spreads."
   },
   {
-    "objectID": "emomis_slides.html#implications-for-interventions",
-    "href": "emomis_slides.html#implications-for-interventions",
+    "objectID": "index.html#implications-for-interventions",
+    "href": "index.html#implications-for-interventions",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Implications for interventions",
     "text": "Implications for interventions\n\nPlatform-level: rapid response and pre-bunking during predictable crises (the when)\nUser-level: target users with high-anger, high-volatility profiles (the who)\nNudging campaigns alone are unlikely to mitigate misinformation\n\n\nIntervention implications are speculative / “directions the findings point to” rather than recommendations."
   },
   {
-    "objectID": "emomis_slides.html#limitations",
-    "href": "emomis_slides.html#limitations",
+    "objectID": "index.html#limitations",
+    "href": "index.html#limitations",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Limitations",
     "text": "Limitations\n\nProportions, not raw counts, so compositional effects possible\nWe measure emotional expression, not felt experience\nURL-based misinformation misses text/meme/screenshot false claims\nAustrian Twitter does not generalize to other platforms/contexts\n\n\nIf pressed on the URL limitation: note that text-only misinformation is probably more emotionally charged, so we may be underestimating the effect."
   },
   {
-    "objectID": "emomis_slides.html#thank-you",
-    "href": "emomis_slides.html#thank-you",
+    "objectID": "index.html#thank-you",
+    "href": "index.html#thank-you",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Thank you!",
     "text": "Thank you!\nFor questions, email jula.luehring@gesis.org :-)\nPre-registration: osf.io/xejdw\nCode & data: osf.io/mvc6b\n\nFor questions, reach out to Jula."
   },
   {
-    "objectID": "emomis_slides.html#backup-structural-breaks-in-untrustworthy-news",
-    "href": "emomis_slides.html#backup-structural-breaks-in-untrustworthy-news",
+    "objectID": "index.html#backup-structural-breaks-in-untrustworthy-news",
+    "href": "index.html#backup-structural-breaks-in-untrustworthy-news",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Backup: structural breaks in untrustworthy news",
     "text": "Backup: structural breaks in untrustworthy news\nTwo unexplained step-changes (July 1 and Aug 28, 2022) in the untrustworthy proportion. Cumulative shift: +0.11 percentage points. Modelled as dummies in the VAR.\n\n\n\nFigure 6. Two structural breaks in the trustworthiness time series on July 1, and August 28, 2022.\n\n\n\nIf someone asks “what happened in summer 2022?” — honest answer: we don’t know, and we couldn’t find a triggering event. The Musk acquisition was later (October), so it’s not that. We control for it and move on but ideas welcome!!"
   },
   {
-    "objectID": "emomis_slides.html#backup-emotional-dynamics-from-irregular-data",
-    "href": "emomis_slides.html#backup-emotional-dynamics-from-irregular-data",
+    "objectID": "index.html#backup-emotional-dynamics-from-irregular-data",
+    "href": "index.html#backup-emotional-dynamics-from-irregular-data",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Backup: emotional dynamics from irregular data",
     "text": "Backup: emotional dynamics from irregular data\nThe Houben et al. (2015) metrics assume equally-spaced measurements but tweets aren’t.\n\nVariability / instability: weekly windows with ≥ 10 tweets, then averaged across weeks\nInertia: exponential decay regression → hourly autocorrelation \\(\\phi_{hour}\\)"
   },
   {
-    "objectID": "emomis_slides.html#backup-why-var9",
-    "href": "emomis_slides.html#backup-why-var9",
+    "objectID": "index.html#backup-why-var9",
+    "href": "index.html#backup-why-var9",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Backup: why VAR(9)?",
     "text": "Backup: why VAR(9)?\n\n\n\nLags\nAIC\nBIC\nPortmanteau\n\n\n\n\n7\n5191.0\n5591.7\n&lt;.001\n\n\n8\n5182.2\n5630.9\n&lt;.001\n\n\n9\n5151.1\n5647.8\n.002\n\n\n\nChose 9: lowest AIC, best residual properties, stability max-eigenvalue 0.972."
   },
   {
-    "objectID": "emomis_slides.html#backup-variance-decomposition",
-    "href": "emomis_slides.html#backup-variance-decomposition",
+    "objectID": "index.html#backup-variance-decomposition",
+    "href": "index.html#backup-variance-decomposition",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "Backup: variance decomposition",
     "text": "Backup: variance decomposition\nAt 14-day horizon:\n\nMisinformation: 95.3% self-explained\nFear: 97.2% self-explained\nAnger: ~63% self-explained (37% from fear shocks)\nMisinformation ↔︎ emotions cross-effects: all &lt; 5%"
   },
   {
-    "objectID": "emomis_slides.html#references",
-    "href": "emomis_slides.html#references",
+    "objectID": "index.html#references",
+    "href": "index.html#references",
     "title": "Anger and Fear Predict Individual Misinformation Sharing but Not Collective Patterns on Twitter",
     "section": "References",
     "text": "References\n\n\n\n\nAlbath, E. A., Greifeneder, R., Douglas, K. M., Cichocka, A., Marques, M. D., Wilson, M. S., Kerr, J. R., Sibley, C. G., & Osborne, D. (2024). Does Lower Psychological Need Satisfaction Foster Conspiracy Belief? Longitudinal Effects Over 3 Years in New Zealand. Personality and Social Psychology Bulletin, 01461672241292841. https://doi.org/10.1177/01461672241292841\n\n\nBudak, C., Nyhan, B., Rothschild, D. M., Thorson, E., & Watts, D. J. (2024). Misunderstanding the harms of online misinformation. Nature, 630(8015), 45–53. https://doi.org/10.1038/s41586-024-07417-w\n\n\nEcker, U. K. H., Lewandowsky, S., Cook, J., Schmid, P., Fazio, L. K., Brashier, N., Kendeou, P., Vraga, E. K., & Amazeen, M. A. (2022). The psychological drivers of misinformation belief and its resistance to correction. Nature Reviews Psychology, 1(1), 13–29. https://doi.org/10.1038/s44159-021-00006-y\n\n\nFrischlich, L., Olsson, H., Roy, A., Schulze, H., Rhodes, S., & Mansheim, A. (2025). The complexity of misinformation extends beyond virus and warfare analogies. Npj Complexity, 2(1), 29. https://doi.org/10.1038/s44260-025-00053-z\n\n\nGreenstein, M., & Franklin, N. (2020). Anger Increases Susceptibility to Misinformation. Experimental Psychology, 67(3), 202–209. https://doi.org/10.1027/1618-3169/a000489\n\n\nHouben, M., Van Den Noortgate, W., & Kuppens, P. (2015). The relation between short-term emotion dynamics and psychological well-being: A meta-analysis. Psychological Bulletin, 141(4), 901–930. https://doi.org/10.1037/a0038822\n\n\nJenke, L. (2024). Affective Polarization and Misinformation Belief. Political Behavior, 46(2), 825–884. https://doi.org/10.1007/s11109-022-09851-w\n\n\nLindquist, K. A., & Barrett, L. F. (2012). A functional architecture of the human brain: Emerging insights from the science of emotion. Trends in Cognitive Sciences, 16(11), 533–540. https://doi.org/10.1016/j.tics.2012.09.005\n\n\nLuehring, J., Garcia, D., Waldherr, A., Lasser, J., Shetty, A., & Metzler, H. (2025). Quantifying the Causal Effects of Misinformation on Engagement and Emotions on Social Media. PsyArXiv. https://doi.org/10.31234/osf.io/cemw7_v1\n\n\nLühring, J., Shetty, A., Koschmieder, C., Garcia, D., Waldherr, A., & Metzler, H. (2023). Emotions in misinformation studies: Distinguishing affective state from emotional response and misinformation recognition from acceptance. OSF. https://doi.org/10.31234/osf.io/udqms\n\n\nMartel, C., Pennycook, G., & Rand, D. G. (2020). Reliance on emotion promotes belief in fake news. Cognitive Research: Principles and Implications, 5. https://doi.org/10.1186/s41235-020-00252-3\n\n\nMosleh, M., Cole, R., & Rand, D. G. (2024). Misinformation and harmful language are interconnected, rather than distinct, challenges. PNAS Nexus, 3(3), pgae111. https://doi.org/10.1093/pnasnexus/pgae111\n\n\nOgnyanova, K., Lazer, D., Robertson, R. E., & Wilson, C. (2020). Misinformation in action: Fake news exposure is linked to lower trust in media, higher trust in government when your side is in power. Harvard Kennedy School Misinformation Review. https://doi.org/10.37016/mr-2020-024\n\n\nPröllochs, N., Bär, D., & Feuerriegel, S. (2021). Emotions in online rumor diffusion. EPJ Data Science, 10(1), 51. https://doi.org/10.1140/epjds/s13688-021-00307-5\n\n\nRussell, J. A. (1980). A circumplex model of affect. Journal of Personality and Social Psychology, 39(6), 1161–1178. https://doi.org/10.1037/h0077714\n\n\nWardle, C., & Derakhshan, H. (2017). Information Disorder: Toward an Interdisciplinary Framework for Research and Policymaking. Council of Europe Report. https://doi.org/http://tverezo.info/wp-content/uploads/2017/11/PREMS-162317-GBR-2018-Report-desinformation-A4-BAT.pdf\n\n\nWidmann, T., & Wich, M. (2022). Creating and Comparing Dictionary, Word Embedding, and Transformer-Based Models to Measure Discrete Emotions in German Political Text. Political Analysis, 1–16. https://doi.org/10.1017/pan.2022.15\n\n\nZollo, F., Novak, P. K., Vicario, M. D., Bessi, A., Mozetič, I., Scala, A., Caldarelli, G., & Quattrociocchi, W. (2015). Emotional Dynamics in the Age of Misinformation. PLOS ONE, 10(9), e0138740. https://doi.org/10.1371/journal.pone.0138740"
