@@ -28,12 +28,6 @@ execute:
   warning: false
 ---
 
-::: notes
-Hi,..
-
-This study is part of Jula's PhD and we worked on the time series analysis together during her visit at UT Austin last year.
-
-:::
 
 ## The temporal nature of emotions and misinformation
 
@@ -59,7 +53,7 @@ $\rightarrow$ The relationship seems **bi-directional**, hence, it may be import
 
 When misinformation circulates on social media, emotions often spread alongside it and the two have been thought to mutually reinforce each other. 
 
-And indeed, experimental work show that heightened emotional experiences are linked to misinformation acceptance and longitudinal panel surveys link emotional traits to conspiracy beliefs over time.
+And indeed, experiments and panel surveys link heightened emotions to misinformation acceptance and conspiracy belief.
 
 But studies also show that misinformation itself is followed by emotional experiences when it contracts or confirms pre-existing beliefs.
 
@@ -75,9 +69,10 @@ This suggests a bidirectional relationship at the individual level and highlight
 
 - At the **collective level**, misinformation represents only a fraction of news [see @budakMisunderstandingHarmsOnline2024 for a discussion]
 
-    - But individual-level dynamics can ripple through the broader system **generating macro-level consequences**, including affective polarization [@jenkeAffectivePolarizationMisinformation2024] and loss of trust in institutions [@ognyanovaMisinformationActionFake2020]
+- But individual-level dynamics can ripple through the broader system **generating macro-level consequences**, including affective polarization [@jenkeAffectivePolarizationMisinformation2024] and loss of trust in institutions [@ognyanovaMisinformationActionFake2020]
 
-- Misinformation is linked to emotional dynamics and hate speech on social media [@luhringQuantifyingMisinfo2025; @moslehMisinformationHarmfulLanguage2024; @prollochsEmotionsOnlineRumor2021; @zolloEmotionalDynamicsAge2015]
+<!-- Misinformation is linked to emotional dynamics and hate speech on social media [@luhringQuantifyingMisinfo2025; @moslehMisinformationHarmfulLanguage2024; @prollochsEmotionsOnlineRumor2021; @zolloEmotionalDynamicsAge2015] 
+-->
 
 $\rightarrow$ Aggregate patterns may **mask** or **contradict** individual-level mechanisms (*ecological fallacy*<sup>3</sup>)
 
@@ -93,9 +88,7 @@ This relationship between misinformation and emotions operates across multiple l
 
 At the collective level, misinformation represents only a small fraction of overall news consumption on platforms. 
 
-Yet individual-level dynamics can aggregate and ripple through the broader system, generating macro-level consequences such as affective polarization and erosion of trust in institutions.
-
-And prior work looking at aggregate social media data has found associations between misinformation and hateful emotional dynamics.
+Yet individual-level dynamics can aggregate and ripple through the broader system, generating macro-level consequences such as hateful emotional dynamics on social media and erosion of trust in institutions.
 
 The methodological implication is that aggregate patterns may mask, or in some cases contradict, the individual-level mechanisms that produce them, which is called the ecological fallacy: a relationship observed at the population level need not hold or reverse for any individual within it. 
 
@@ -138,11 +131,7 @@ This multi-level perspective is increasingly recognized in the misinformation li
 
 Frischlich and colleagues, for instance, have recently argued that the complexity of misinformation extends across individual, group, and societal levels, and that single-level approaches cannot adequately capture its dynamics.
 
-We adopt this perspective and look at the processes depending on the where we look.
-
-At the collective level, we look at synchronized spikes in misinformation and emotional expression around major events.
-
-At the individual level, we look at what kind of emotional profile of a user predicts engagement with untrustworthy content. 
+We adopt this perspective and look at the relationship between emotions and misinformation at two levels: the collective level, as synchronized responses aggregated across individuals on social media, and the level of each individual user over time.
 
 [NEXT SLIDE]
 :::
@@ -156,13 +145,9 @@ At the individual level, we look at what kind of emotional profile of a user pre
 **RQ2 [Individual]:** Do static emotional **traits**, **dynamics** (baseline, variability, instability, inertia), or momentary **states** predict whether a user engages with untrustworthy news?
 
 ::: notes
-To formalize these two questions:
+More precisely, the first research question asks whether misinformation sharing and emotional expression reinforce each other in the aggregate time series, or whether they respond independently to external events.
 
-The first research question asks whether misinformation sharing and emotional expression reinforce each other in the aggregate time series, or whether they respond independently to external events.
-
-The second asks whether sharing of untrustworthy content is predicted by stable emotional traits, fluctuating emotions, or by momentary states in the time window immediately preceding sharing. 
-
-These are the two questions the rest of the analysis is organized around.
+The second question then asks whether sharing of untrustworthy content is predicted by stable emotional traits, fluctuating emotions, or by momentary states in the time window immediately preceding sharing. 
 
 [NEXT SLIDE]
 
@@ -194,7 +179,7 @@ A few notes on the data and methods.
 
 ::: notes
 
-We analyze approximately 29,000 Twitter users geolocated in Austria, identified using Brandwatch's location classification algorithm, which combines profile metadata, time zones, geographic coordinates, and top-level domains.
+We analyze approximately 29,000 Twitter users geolocated in Austria, identified using Brandwatch's location classification algorithm.
 
 The observation period runs from January 2019 to March 2023 spanning pre-pandemic, pandemic, and post-pandemic phases as well as several major global and domestic political events that we use to characterize collective dynamics.
 
@@ -216,13 +201,9 @@ The data was collected via the academic Twitter API in April and May of 2023, sh
 | News sharing | URL → NewsGuard domain match |
 | **Untrustworthy** news | NewsGuard score < 60 |
 | Partisan news | NewsGuard left/right label |
-| **Anger / fear** | `pol_emo_emDeBERTa` [@widmannCreatingComparingDictionary2022] — German tweets only |
+| **Anger / fear** | `pol_emo_emDeBERTa` [@widmannCreatingComparingDictionary2022] — German tweets only ![](figures/roc_curve.png){fig-align="center" width="85%"}<br><span style="font-size: 0.7em;">Figure 1. Area Under the Curve for emotion expressions (1,000 tweets).</span> |
 
-![Figure 1. Area Under the Curve for the emotion expressions (1,000 tweets).](figures/roc_curve.png){fig-align="left" width="50%"}
 
-::: footer
-*Note*: URL-based misinformation misses text-only false claims and audiovisuals<br> and emotional expression ≠ experience.  
-:::
 
 ::: notes
 
@@ -569,10 +550,9 @@ Cumulative shift: +0.11 percentage points. Modelled as dummies in the VAR.
 
 
 
-::: {.notes}
-If someone asks "what happened in summer 2022?" — honest answer: we don't know,
-and we couldn't find a triggering event. The Musk acquisition was later (October),
-so it's not that. We control for it and move on but ideas welcome!!
+::: notes
+Couldn't find the reason for the structural break, not in hashtags, changes in the selection and ratings of NewsGuard domains, or users joining/leaving our panel.
+The Musk acquisition was later (October), so it's not that either. We control for it and move on but ideas welcome!!
 
 :::
 
@@ -584,11 +564,6 @@ The Houben et al. (2015) metrics assume equally-spaced measurements but tweets a
 
 - **Variability / instability**: weekly windows with ≥ 10 tweets, then averaged across weeks
 - **Inertia**: exponential decay regression → hourly autocorrelation $\phi_{hour}$
-
-::: {.notes}
-
-
-:::
 
 ---
 
@@ -602,10 +577,6 @@ The Houben et al. (2015) metrics assume equally-spaced measurements but tweets a
 
 Chose 9: lowest AIC, best residual properties, stability max-eigenvalue 0.972.
 
-::: {.notes}
-
-
-:::
 
 ---
 
@@ -618,9 +589,5 @@ At 14-day horizon:
 - Anger: ~63% self-explained (37% from fear shocks)
 - **Misinformation ↔ emotions cross-effects: all < 5%**
 
-::: {.notes}
-
-
-:::
 
 ## References
